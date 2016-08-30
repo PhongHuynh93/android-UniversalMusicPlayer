@@ -246,6 +246,7 @@ public abstract class ActionBarCastActivity extends AppCompatActivity {
         // FIXME: 8/30/16 inflate the toolbar menu into the toolbar
         mToolbar.inflateMenu(R.menu.main);
 
+        // initialize the drawer layout
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         if (mDrawerLayout != null) {
             NavigationView navigationView = (NavigationView) findViewById(R.id.nav_view);
@@ -265,6 +266,7 @@ public abstract class ActionBarCastActivity extends AppCompatActivity {
             setSupportActionBar(mToolbar);
         }
 
+        // toolbar already initialize 
         mToolbarInitialized = true;
     }
 
