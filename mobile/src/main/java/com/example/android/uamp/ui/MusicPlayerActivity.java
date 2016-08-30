@@ -60,7 +60,10 @@ public class MusicPlayerActivity extends BaseActivity
 
         setContentView(R.layout.activity_player);
 
+        // declare toolbar
         initializeToolbar();
+
+        // declare param from intent
         initializeFromParams(savedInstanceState, getIntent());
 
         // Only check if a full screen player is needed on the first time:
