@@ -266,7 +266,7 @@ public abstract class ActionBarCastActivity extends AppCompatActivity {
             setSupportActionBar(mToolbar);
         }
 
-        // toolbar already initialize 
+        // toolbar already initialize
         mToolbarInitialized = true;
     }
 

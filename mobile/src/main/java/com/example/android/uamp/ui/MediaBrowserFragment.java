@@ -47,7 +47,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * A Fragment that lists all the various browsable queues available
+ * todo 2 - A Fragment that lists all the various browsable queues available
  * from a {@link android.service.media.MediaBrowserService}.
  * <p/>
  * It uses a {@link MediaBrowserCompat} to connect to the {@link com.example.android.uamp.MusicService}.
@@ -135,6 +135,10 @@ public class MediaBrowserFragment extends Fragment {
             }
         };
 
+    /**
+     * todo 2b add interface to activity
+     * @param activity
+     */
     @Override
     public void onAttach(Activity activity) {
         super.onAttach(activity);
@@ -143,12 +147,20 @@ public class MediaBrowserFragment extends Fragment {
         mMediaFragmentListener = (MediaFragmentListener) activity;
     }
 
+    /**
+     * todo 2b add listview and listen for click
+     * @param inflater
+     * @param container
+     * @param savedInstanceState
+     * @return
+     */
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         LogHelper.d(TAG, "fragment.onCreateView");
         View rootView = inflater.inflate(R.layout.fragment_list, container, false);
 
+//        find listview
         mErrorView = rootView.findViewById(R.id.playback_error);
         mErrorMessage = (TextView) mErrorView.findViewById(R.id.error_message);
 
@@ -159,6 +171,7 @@ public class MediaBrowserFragment extends Fragment {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                // listen for listening to listview
                 checkForUserVisibleErrors(false);
                 MediaBrowserCompat.MediaItem item = mBrowserAdapter.getItem(position);
                 mMediaFragmentListener.onMediaItemSelected(item);

@@ -122,6 +122,11 @@ public class MusicPlayerActivity extends BaseActivity
         }
     }
 
+    /**
+     * get the string from voice
+     * @param savedInstanceState
+     * @param intent
+     */
     protected void initializeFromParams(Bundle savedInstanceState, Intent intent) {
         String mediaId = null;
         // check if we were started from a "Play XYZ" voice search. If so, we save the extras
@@ -138,9 +143,14 @@ public class MusicPlayerActivity extends BaseActivity
                 mediaId = savedInstanceState.getString(SAVED_MEDIA_ID);
             }
         }
+
         navigateToBrowser(mediaId);
     }
 
+    /**
+     * add brower fragment, fragment add via slide from right to left
+     * @param mediaId
+     */
     private void navigateToBrowser(String mediaId) {
         LogHelper.d(TAG, "navigateToBrowser, mediaId=" + mediaId);
         MediaBrowserFragment fragment = getBrowseFragment();
