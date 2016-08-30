@@ -27,7 +27,8 @@ import com.example.android.uamp.R;
 import com.example.android.uamp.utils.LogHelper;
 
 /**
- * Main activity for the music player.
+ *
+ * todo 1 - Main activity for the music player.
  * This class hold the MediaBrowser and the MediaController instances. It will create a MediaBrowser
  * when it is created and connect/disconnect on start/stop. Thus, a MediaBrowser will be always
  * connected while this activity is running.
