@@ -237,10 +237,13 @@ public abstract class ActionBarCastActivity extends AppCompatActivity {
 
     protected void initializeToolbar() {
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
+        // fixme - find the toolbar and make an error message if can't find it
         if (mToolbar == null) {
             throw new IllegalStateException("Layout is required to include a Toolbar with id " +
                 "'toolbar'");
         }
+
+        // FIXME: 8/30/16 inflate the toolbar menu into the toolbar
         mToolbar.inflateMenu(R.menu.main);
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
